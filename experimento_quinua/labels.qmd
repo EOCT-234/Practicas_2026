@@ -1,0 +1,127 @@
+---
+title: "experimental labels"
+format:
+  html:
+    toc: true
+    toc-location: left
+    number-sections: true
+    self-contained: true
+    output-file: "labels"
+editor_options: 
+  chunk_output_type: console
+execute: 
+  echo: true
+  message: false
+  warning: false
+---
+
+```{r}
+library(jpeg)
+
+img <- readJPEG("D:/PRACTICAS-PREPROFESIONALES/Quinoa-osmotic-stress/experimento_quinua/Logo_CEIGRAS.jpeg")
+plot(as.raster(img))
+```
+
+
+# Setup
+
+```{r}
+#| label: setup
+
+source("https://inkaverse.com/setup.r")
+```
+
+## Field-book
+
+```{r}
+gs <- "https://docs.google.com/spreadsheets/d/1HzThbWZS16yzrJfLCan80wSNu8BGIuy6NETIqb0qHqQ/edit?gid=2124233866#gid=2124233866" %>% 
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read(ss = .,sheet = "fb")
+
+#> Google fonts: https://fonts.google.com/
+
+font <- c("Merriweather Sans", "Permanent Marker", "Tillana")
+huito_fonts(font)
+```
+
+## Labels 
+
+```{r}
+label <- fb %>%
+  label_layout(size = c(8, 2.55)
+               , border_color = "blue"
+               , border_width = 0.5
+               ) %>%
+  include_image(
+    value = "https://doctoradofisica.uni.edu.pe/wp-content/uploads/2024/01/d123d3.webp"
+    , size = c(1.6,1.6)
+    , position = c(1.1, 2)
+    ) %>% 
+  include_image(
+    value = "https://huito.inkaverse.com/img/scale.pdf"
+    , size = c(5, 1)
+    , position = c(4.65 , 0.53)
+    ) %>%
+  include_image(
+    value = "D:/PRACTICAS-PREPROFESIONALES/Quinoa-osmotic-stress/experimento_quinua/Logo_CEIGRAS.jpeg"
+    , size = c(1.6,1.6)
+    , position = c(1.1, 1.1)
+    ) %>% 
+  include_barcode(
+    value = "qrcode"
+    , size = c(1.5, 1.5)
+    , position = c(2.85, 1.79)
+    ) %>% 
+   include_text(value = "Plot:"
+               , position = c(4.2, 2.3)
+               , size = 10
+               , color = "black"
+               , font= font[3]
+               , fontface = "bold"
+               ) %>%
+  include_text(value = "plots"
+               , position = c(6.7, 2.3)
+               , size = 10
+               , color = "black"
+               , font= font[1]
+               ) %>% 
+  include_text(value = "Accesion"
+               , position = c(6.7, 1.85)
+               , size = 10
+               , color = "black"
+               , font = font[1]
+               ) %>% 
+    include_text(value = "Accesión:"
+               , position = c(4.6, 1.85)
+               , size = 10
+               , color = "black"
+               , font = font[3]
+               , fontface = "bold"
+               ) %>%
+    include_text(value = "Temperatura:"
+               , position = c(5.05,1.35)
+               , size = 10
+               , color = "black"
+               , font = font[3]
+               , fontface = "bold"
+               )%>%
+  include_text(value = "T°"
+               , position = c(6.73,1.38)
+               , size = 10
+               , color = "black"
+               , font = font[1]
+               )
+label %>% label_print()
+```
+
+```{r}
+#| eval: false
+
+label %>% 
+  label_print(mode = "c"
+              , filename = "Quinoa-osmotic-stress/experimento_quinua"
+              , paper = c(21.0, 29.7)
+              )
+```
