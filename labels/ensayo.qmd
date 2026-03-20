@@ -1,0 +1,82 @@
+---
+title: "Unt123itled"
+author: "123"
+format: html
+editor: visual
+---
+
+# Letrero VICTOR - EDGAR
+
+```{r}
+library(huito)
+library(dplyr)
+library(googlesheets4)
+source('https://inkaverse.com/setup.r')
+```
+
+```{r}
+# Cargar los datos desde Google Sheets
+
+url <- "https://docs.google.com/spreadsheets/d/1wruOysAqRKvsWfm0AI0NINHRfSaNwC_ZDoEhJT_2jBo/edit?pli=1&gid=1673111549#gid=1673111549"
+
+gs <- url %>%
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read("cartel")
+# Frijol_Lonya Chico_Wagner 
+
+#> Google fonts: https://fonts.google.com/
+
+# Definir la fuente
+font <- c("Anton", "Barlow Condensed") 
+huito_fonts(font)
+```
+
+```{r}
+#VARIABLES
+a <- "Caracterización morfoagronómica de quinua ("
+b <- "Chepodium quinoa"
+c <- ") en"
+d <- "Lamud, Luya, Amazonas"
+
+
+```
+
+```{r}
+
+tituloa <- paste(a, b, c)
+```
+
+
+```{r}
+## Capaz
+
+labelVE <- fb %>% 
+  label_layout(
+    size = c(120, 80),  # Dimensiones del cartel (ancho x alto)
+    border_color = "black"
+  ) %>%
+  
+include_text(
+  value = tituloa,
+  position = c(60, 35),
+  fontface = "italic",
+  size = 95,
+  color = "#582900",
+  font = font[2]
+)
+# Visualización previa
+labelVE %>% 
+  label_print(mode = "preview", viewer = T)
+
+```
+
+```{r}
+# Descargar 
+labelVE %>%
+  label_print(mode = "c",
+               paper = c(125, 85),
+               nlabels = 1,  # Solo una etiqueta
+               filename = "D:/Practicas_2026/labels/Letrero_VICTOR-EDGAR")
+```

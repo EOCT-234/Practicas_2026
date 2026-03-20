@@ -1,0 +1,489 @@
+---
+title: "CEIGRAS"
+format: html
+---
+
+# Frijol_Lonya Chico_Wagner 
+ 
+```{r}
+
+library(huito)
+library(dplyr)
+library(googlesheets4)
+source('https://inkaverse.com/setup.r')
+# Cargar los datos desde Google Sheets
+
+url <- "https://docs.google.com/spreadsheets/d/1wruOysAqRKvsWfm0AI0NINHRfSaNwC_ZDoEhJT_2jBo/edit?pli=1&gid=1673111549#gid=1673111549"
+
+gs <- url %>% 
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read("cartel")
+# Frijol_Lonya Chico_Wagner 
+
+# Definir la fuente
+font <- c("Anton", "Anton", "Anton") 
+huito_fonts(font)
+
+## Capaz
+
+label1 <- fb %>% 
+  label_layout(
+    size = c(120, 80),  # Dimensiones del cartel (ancho x alto)
+    border_color = "black"
+  ) %>%
+  include_image(value = "Frijol.jpeg"
+                , size = c(37, 25)
+                , position = c(102, 12)
+                , opts = "image_scale(700)"
+  ) %>%
+  
+  include_image(value = "https://www.shutterstock.com/image-photo/beans-isolated-on-white-background-600nw-2521916411.jpg"
+                , size = c(35, 50)
+                , position = c(65, 10)
+                , opts = "image_scale(500)"
+  ) %>%
+  # Incluir los logos 
+  
+  # Agregar el logo CEIGRAS
+  include_image(
+    value = "ceigras_logo.jpeg",
+    size = c(35, 35),  # Incrementar tamaño del logo
+    position = c(63, 70)
+  ) %>%
+  include_image(
+    value = "https://www.peruconciencia.pe/wp-content/uploads/24.-Universidad-Nacional-Toribio-Rodriguez-de-Mendoza-de-Amazonas-UNTRM.jpg",
+    size = c(40, 30),  # Incrementar tamaño del logo
+    position = c(20, 70)
+  ) %>% 
+  include_image(
+    value = "indes.jpeg",
+    size = c(30, 30),  # Incrementar tamaño del logo
+    position = c(104, 72)
+  ) %>% 
+  include_text(
+    value = " MEJORAMIENTO DEL SERVICIO DE PROMOCIÓN DE LA CIENCIA, TECNOLOGÍA E INNOVACIÓN TECNOLÓGICA\n\nEN EL CENTRO DE INVESTIGACIÓN E INNOVACIÓN EN GRANOS Y SEMILLAS CEIGRAS DE LA UNTRM\n\nDISTRITO DE LAMUD, PROVINCIA DE LUYA, REGION DE AMAZONAS\n\n CUI: 2590588 - (CEIGRAS) "
+   ,position = c(60, 50),
+    size = 90,# Incrementar tamaño del texto
+    color = "#003d08",  # Cambiar a un color más visible
+    font = font[1]
+  ) %>% 
+ include_text(
+  value ="Banco de Germoplasma de frijoles (Phaseolus spp.) de la región Amazonas",  
+  position = c(60, 32),
+  size = 95,  
+  color = "#582900",
+  font = font[1]
+) %>% 
+  include_text(
+    value = " Ubicación:", 
+    position = c(8,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Lonya Chico, Luya, Amazonas ( 6°13′46.07″S - 77°57′20.20″W )", 
+    position = c(20.5,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Encargado:",
+    position = c(8,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Wagner Meza Maicelo",
+    position = c(21,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Coordinador:" ,
+    position = c(8,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Flavio Lozano Isla" ,
+    position = c(23,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  )
+
+# Visualización previa
+label1 %>% 
+  label_print(mode = "preview", viewer = T)
+# Descargar 
+# label1 %>%
+#   label_print(mode = "c",
+#               paper = c(125, 85),
+#               nlabels = 1,  # Solo una etiqueta
+#               filename = "C:/Users/HP/OneDrive/Documentos/CEIGRAS/Fondo quinua/img/Frijol")
+
+
+
+```
+ 
+ # Quinua_Lonya Chico_Wagner 
+ 
+```{r}
+# Definir la fuente
+font <- c("Anton", "Anton", "Anton") 
+huito_fonts(font)
+
+## Capaz
+
+label <- fb %>% 
+  label_layout(
+    size = c(120, 80),  # Dimensiones del cartel (ancho x alto)
+    border_color = "black"
+  ) %>%
+  include_image(value = "Quinua.jpeg"
+                , size = c(65, 30)
+                , position = c(82, 13)
+                , opts = "image_scale(700)"
+  ) %>%
+  
+  # Incluir los logos 
+  
+  # Agregar el logo CEIGRAS
+  include_image(
+    value = "ceigras_logo.jpeg",
+    size = c(35, 35),  # Incrementar tamaño del logo
+    position = c(63, 70)
+  ) %>%
+  include_image(
+    value = "https://www.peruconciencia.pe/wp-content/uploads/24.-Universidad-Nacional-Toribio-Rodriguez-de-Mendoza-de-Amazonas-UNTRM.jpg",
+    size = c(40, 30),  # Incrementar tamaño del logo
+    position = c(20, 70)
+  ) %>% 
+  include_image(
+    value = "indes.jpeg",
+    size = c(30, 30),  # Incrementar tamaño del logo
+    position = c(104, 72)
+  ) %>% 
+  include_text(
+    value = " MEJORAMIENTO DEL SERVICIO DE PROMOCIÓN DE LA CIENCIA, TECNOLOGÍA E INNOVACIÓN TECNOLÓGICA\n\nEN EL CENTRO DE INVESTIGACIÓN E INNOVACIÓN EN GRANOS Y SEMILLAS CEIGRAS DE LA UNTRM\n\nDISTRITO DE LAMUD, PROVINCIA DE LUYA, REGION DE AMAZONAS\n\n CUI: 2590588 - (CEIGRAS) "
+   ,position = c(60, 50),
+    size = 90,# Incrementar tamaño del texto
+    color = "#003d08",  # Cambiar a un color más visible
+    font = font[1]
+  ) %>% 
+ include_text(
+  value = ("Banco de Germoplasma de Quinuas (Chenopodium quinoa) de las regiones\nandinas y altiplánicas del Perú"),  
+  position = c(60, 32),
+  size = 95,  
+  color = "#582900",
+  font = font[1]
+) %>% 
+  include_text(
+    value = " Ubicación:", 
+    position = c(8,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Lonya Chico, Luya, Amazonas ( 6°13′46.07″S - 77°57′20.20″W  )", 
+    position = c(20.5,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Encargado:",
+    position = c(8,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Wagner Meza Maicelo",
+    position = c(21,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Coordinador:" ,
+    position = c(8,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Flavio Lozano Isla" ,
+    position = c(23,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  )
+
+# # Visualización previa
+# label %>% 
+#   label_print(mode = "preview", viewer = T)
+# label %>%
+#   label_print(mode = "c", 
+#               paper = c(125, 85),
+#               nlabels = 1,  # Solo una etiqueta
+#               filename = "C:/Users/HP/OneDrive/Documentos/CEIGRAS/Fondo quinua/img/quinua")
+```
+ 
+ 
+# Frijol_Molinopampa_Henry
+
+
+```{r}
+# Definir la fuente
+font <- c("Anton", "Anton", "Anton") 
+huito_fonts(font)
+
+## Capaz
+
+label <- fb %>% 
+  label_layout(
+    size = c(120, 80),  # Dimensiones del cartel (ancho x alto)
+    border_color = "black"
+  ) %>%
+  include_image(value = "Frijol.jpeg"
+                , size = c(37, 25)
+                , position = c(102, 12)
+                , opts = "image_scale(700)"
+  ) %>%
+  
+  include_image(value = "https://www.shutterstock.com/image-photo/beans-isolated-on-white-background-600nw-2521916411.jpg"
+                , size = c(35, 50)
+                , position = c(65, 10)
+                , opts = "image_scale(500)"
+  ) %>%
+  # Incluir los logos 
+  
+  # Agregar el logo CEIGRAS
+  include_image(
+    value = "ceigras_logo.jpeg",
+    size = c(35, 35),  # Incrementar tamaño del logo
+    position = c(63, 70)
+  ) %>%
+  include_image(
+    value = "https://www.peruconciencia.pe/wp-content/uploads/24.-Universidad-Nacional-Toribio-Rodriguez-de-Mendoza-de-Amazonas-UNTRM.jpg",
+    size = c(40, 30),  # Incrementar tamaño del logo
+    position = c(20, 70)
+  ) %>% 
+  include_image(
+    value = "indes.jpeg",
+    size = c(30, 30),  # Incrementar tamaño del logo
+    position = c(104, 72)
+  ) %>% 
+  include_text(
+    value = " MEJORAMIENTO DEL SERVICIO DE PROMOCIÓN DE LA CIENCIA, TECNOLOGÍA E INNOVACIÓN TECNOLÓGICA\n\nEN EL CENTRO DE INVESTIGACIÓN E INNOVACIÓN EN GRANOS Y SEMILLAS CEIGRAS DE LA UNTRM\n\nDISTRITO DE LAMUD, PROVINCIA DE LUYA, REGION DE AMAZONAS\n\n CUI: 2590588 - (CEIGRAS) "
+   ,position = c(60, 50),
+    size = 90,# Incrementar tamaño del texto
+    color = "#003d08",  # Cambiar a un color más visible
+    font = font[1]
+  ) %>% 
+ include_text(
+  value = ("Banco de Germoplasma de frijoles Phaseolus spp. de la región Amazonas"),  
+  position = c(60, 32),
+  size = 95,  
+  color = "#582900",
+  font = font[1]
+) %>% 
+  include_text(
+    value = " Ubicación:", 
+    position = c(7,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Molinopampa, Chachapoyas, Amazonas ( 6°13′52″S - 77°57′19″O )", 
+    position = c(20,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Encargado:",
+    position = c(7,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Henry Santillan Culquimboz",
+    position = c(20,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Coordinador:" ,
+    position = c(7,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Flavio Lozano Isla" ,
+    position = c(22,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  )
+
+# Visualización previa
+label %>% 
+  label_print(mode = "preview", viewer = T)
+```
+
+# Quinua_Molinopampa_Henry
+
+```{r}
+# Definir la fuente
+font <- c("Anton", "Anton", "Anton") 
+huito_fonts(font)
+
+## Capaz
+
+label <- fb %>% 
+  label_layout(
+    size = c(120, 80),  # Dimensiones del cartel (ancho x alto)
+    border_color = "black"
+  ) %>%
+  include_image(value = "Quinua.jpeg"
+                , size = c(60, 30)
+                , position = c(102, 15)
+                , opts = "image_scale(700)"
+  ) %>%
+  
+  include_image(value = "QR.jpeg"
+                , size = c(25, 17)
+                , position = c(67, 11.5)
+                , opts = "image_scale(500)"
+  ) %>%
+  # Incluir los logos 
+  
+  # Agregar el logo CEIGRAS
+  include_image(
+    value = "ceigras_logo.jpeg",
+    size = c(35, 35),  # Incrementar tamaño del logo
+    position = c(63, 70)
+  ) %>%
+  include_image(
+    value = "https://www.peruconciencia.pe/wp-content/uploads/24.-Universidad-Nacional-Toribio-Rodriguez-de-Mendoza-de-Amazonas-UNTRM.jpg",
+    size = c(40, 30),  # Incrementar tamaño del logo
+    position = c(20, 70)
+  ) %>% 
+  include_image(
+    value = "indes.jpeg",
+    size = c(30, 30),  # Incrementar tamaño del logo
+    position = c(104, 72)
+  ) %>% 
+  include_text(
+    value = " MEJORAMIENTO DEL SERVICIO DE PROMOCIÓN DE LA CIENCIA, TECNOLOGÍA E INNOVACIÓN TECNOLÓGICA\n\nEN EL CENTRO DE INVESTIGACIÓN E INNOVACIÓN EN GRANOS Y SEMILLAS CEIGRAS DE LA UNTRM\n\nDISTRITO DE LAMUD, PROVINCIA DE LUYA, REGION DE AMAZONAS\n\n CUI: 2590588 - (CEIGRAS) "
+   ,position = c(60, 50),
+    size = 90,# Incrementar tamaño del texto
+    color = "#003d08",  # Cambiar a un color más visible
+    font = font[1]
+  ) %>% 
+ include_text(
+  value = ("Banco de Germoplasma de Quinuas (Chenopodium quinoa) de las regiones\nandinas y altiplánicas del Perú"),  
+  position = c(60, 32),
+  size = 95,  
+  color = "#582900",
+  font = font[1]
+) %>% 
+  include_text(
+    value = " Ubicación:", 
+    position = c(7,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Molinopampa, Chachapoyas, Amazonas ( 6°13′52″S - 77°57′19″O )", 
+    position = c(20,24),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  include_text(
+    value = " Encargado:",
+    position = c(7,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Henry Santillan Culquimboz",
+    position = c(20,16),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Coordinador:" ,
+    position = c(7,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#582900",
+    font = font[3]
+    , opts = "hjust = 0"
+  ) %>% 
+  
+  include_text(
+    value = " Flavio Lozano Isla" ,
+    position = c(22,8),
+    size = 80,  # Incrementar tamaño del texto
+    color = "#003d08",
+    font = font[3]
+    , opts = "hjust = 0"
+  )
+
+# Visualización previa
+label %>% 
+  label_print(mode = "preview", viewer = T)
+```
+
+
