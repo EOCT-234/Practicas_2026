@@ -1,0 +1,76 @@
+---
+title: "LOGO_CEIGRAS"
+author: "CEIGRAS"
+format: html
+editor: visual
+---
+
+# Setup
+
+```{r}
+#| label: setup
+
+source("https://inkaverse.com/setup.r")
+```
+
+## Field-book
+
+```{r}
+#> Google fonts: https://fonts.google.com/
+
+font <- c("Open Sans")
+huito_fonts(font)
+```
+
+## Labels 
+
+```{r}
+label <- label_layout(size = c(3, 1.5)
+               , border_color = "blue"
+               , border_width = 0.5
+               ) %>%
+  # Logo UNTRM
+  include_image(
+    value = "https://gyt.untrm.edu.pe/assets/images/untrmazul.png"
+    , size = c(2,2)
+    , position = c(1.15, 1.1)
+    ) %>% 
+  include_shape(
+    value = "hexagon",
+    psition = c (2, 0.8),
+    border_color = "blue",
+    size = (4)
+    )
+
+
+
+label %>% label_print()
+```
+
+```{r}
+
+ include_shape(
+    value = "line",
+    position = c (2, 0.8),
+    border_color = "blue",
+    size = (4)
+    )
+
+#| eval: false
+
+label %>% 
+  label_print(
+    mode = "c",
+    paper = c(4, 2),   # el PDF será del tamaño de la etiqueta
+    nlabels = 1,
+    filename = "ETIQUETA")
+```
+
+```{r}
+label %>% 
+  label_print(
+    mode = "c",
+    filename = "experimento_quinua.pdf",
+    paper = c(21.0, 29.7)
+  )
+#FUNCIONA los guarda en documentos si no hay directorio específico 
