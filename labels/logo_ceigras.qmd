@@ -17,60 +17,76 @@ source("https://inkaverse.com/setup.r")
 
 ```{r}
 #> Google fonts: https://fonts.google.com/
+# Vina Sans
 
-font <- c("Open Sans")
+font <- c("Montserrat")
 huito_fonts(font)
 ```
 
-## Labels 
+## Labels
 
 ```{r}
-label <- label_layout(size = c(3, 1.5)
+label <- label_layout(size = c(3.9, 0.6)
                , border_color = "blue"
                , border_width = 0.5
                ) %>%
   # Logo UNTRM
   include_image(
-    value = "https://gyt.untrm.edu.pe/assets/images/untrmazul.png"
+    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/Logo_UNTRMpng.png"
     , size = c(2,2)
-    , position = c(1.15, 1.1)
+    , position = c(1.05, 0.3)
     ) %>% 
-  include_shape(
-    value = "hexagon",
-    psition = c (2, 0.8),
-    border_color = "blue",
-    size = (4)
-    )
-
-
+  include_text(value = "CENTRO DE INVESTIGACIÓN"
+               , position = c(2.95 , 0.4)
+               , size = 3.5
+               , color = "#133E6B"
+               , font= font[3]
+               , fontface = "bold"
+               ) %>% 
+  include_text(value = "EN GRANOS Y SEMILLAS"
+               , position = c(2.85 , 0.2)
+               , size = 3.5
+               , color = "#133E6B"
+               , font= font[3]
+               , fontface = "bold"
+               )
 
 label %>% label_print()
 ```
 
 ```{r}
-
- include_shape(
-    value = "line",
-    position = c (2, 0.8),
-    border_color = "blue",
-    size = (4)
-    )
-
 #| eval: false
-
-label %>% 
+creapdf <- label %>% 
   label_print(
     mode = "c",
-    paper = c(4, 2),   # el PDF será del tamaño de la etiqueta
-    nlabels = 1,
-    filename = "ETIQUETA")
+    paper = c(4, 0.7),
+    filename = "ETIQUETA_UNTRM"
+  )
+```
+
+`
+```{r}
+#pdf a jpg
+
+library(pdftools)
+
+pdf_jpg <- pdf_convert(
+  "ETIQUETA_UNTRM.pdf",
+  format = "jpeg",
+  dpi = 600   # calidad alta
+)
 ```
 
 ```{r}
-label %>% 
-  label_print(
-    mode = "c",
-    filename = "experimento_quinua.pdf",
-    paper = c(21.0, 29.7)
-  )
-#FUNCIONA los guarda en documentos si no hay directorio específico 
+#jgp con fondo blanco (trasnparente)
+library(pdftools)
+
+sin_fondo <- pdf_convert(
+  "ETIQUETA_UNTRM.pdf",
+  format = "png",
+  dpi = 600,
+  bg = "transparent"
+)
+
+```
+
