@@ -19,35 +19,38 @@ source("https://inkaverse.com/setup.r")
 #> Google fonts: https://fonts.google.com/
 # Vina Sans
 
-font <- c("Montserrat")
-huito_fonts(font)
+# SIN FUENTES PARA EL LOGO
+#font <- c("Vina Sans")
+#huito_fonts(font)
 ```
 
 ## Labels
 
 ```{r}
+ #colo azul: https://github.com/EOCT-234/Practicas_2026/blob/main/CEIGRAS_archivos/Logo_UNTRMpng.png
+    #color blanco: https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/Logo_UNTRMpng_white.png
+
 label <- label_layout(size = c(3.9, 0.6)
-               , border_color = "blue"
-               , border_width = 0.5
+               , border_color = "white"
+               , border_width = 0.1
+               , background = "#133E6B"
                ) %>%
   # Logo UNTRM
   include_image(
-    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/Logo_UNTRMpng.png"
+    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/Logo_UNTRMpng_white.png"
     , size = c(2,2)
     , position = c(1.05, 0.3)
-    ) %>% 
+    ) %>%  
   include_text(value = "CENTRO DE INVESTIGACIÓN"
-               , position = c(2.95 , 0.4)
+               , position = c(3 , 0.4)
                , size = 3.5
-               , color = "#133E6B"
-               , font= font[3]
+               , color = "white"   #color de letras d euniversidad = #133E6B
                , fontface = "bold"
                ) %>% 
   include_text(value = "EN GRANOS Y SEMILLAS"
-               , position = c(2.85 , 0.2)
+               , position = c(2.9 , 0.2)
                , size = 3.5
-               , color = "#133E6B"
-               , font= font[3]
+               , color = "white"
                , fontface = "bold"
                )
 
@@ -56,37 +59,38 @@ label %>% label_print()
 
 ```{r}
 #| eval: false
-creapdf <- label %>% 
+label %>%
   label_print(
     mode = "c",
     paper = c(4, 0.7),
-    filename = "ETIQUETA_UNTRM"
+    filename = "ETIQUETA_UNTRM_white"
   )
 ```
 
-`
 ```{r}
-#pdf a jpg
-
 library(pdftools)
-
-pdf_jpg <- pdf_convert(
-  "ETIQUETA_UNTRM.pdf",
-  format = "jpeg",
-  dpi = 600   # calidad alta
+pdf_convert(
+  "ETIQUETA_UNTRM_white.pdf",
+  format = "png",
+  dpi = 9000
 )
+
 ```
 
 ```{r}
-#jgp con fondo blanco (trasnparente)
-library(pdftools)
+library(magick)
 
-sin_fondo <- pdf_convert(
-  "ETIQUETA_UNTRM.pdf",
-  format = "png",
-  dpi = 600,
-  bg = "transparent"
-)
+img <- image_read("ETIQUETA_UNTRM_white_1.png")
 
+# convertir blanco en transparente
+img_transp <- image_transparent(img, color = "white")
+
+image_write(img_transp, "CEIGRAS_UNTRM_white_SF.png")
+```
+
+```{r}
+img <- image_read_pdf("ETIQUETA_UNTRM_white.pdf",density=600)
+img <- image_background(img,"none")
+image_write(img,"ETIQUETA_UNTRM.png","png")
 ```
 
