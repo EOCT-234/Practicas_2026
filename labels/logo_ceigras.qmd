@@ -33,7 +33,7 @@ source("https://inkaverse.com/setup.r")
 label <- label_layout(size = c(3.9, 0.6)
                , border_color = "white"
                , border_width = 0.1
-               , background = "#133E6B"
+               , background = "gray"
                ) %>%
   # Logo UNTRM
   include_image(
@@ -80,17 +80,25 @@ pdf_convert(
 ```{r}
 library(magick)
 
-img <- image_read("ETIQUETA_UNTRM_white_1.png")
+img <- image_read("logo_sin_fondo.png")
 
 # convertir blanco en transparente
-img_transp <- image_transparent(img, color = "white")
+img_transp <- image_transparent(img, color = "none")
+# image_blank( width = 400, height = 1200, color = "none")
 
-image_write(img_transp, "CEIGRAS_UNTRM_white_SF.png")
+image_write(img, "CEIGRAS_UNTRM_white_SF.png", density = 400)
 ```
 
 ```{r}
-img <- image_read_pdf("ETIQUETA_UNTRM_white.pdf",density=600)
-img <- image_background(img,"none")
-image_write(img,"ETIQUETA_UNTRM.png","png")
+#Quitar fondo gris
+img <- image_read("logo_sin_fondo.png")   # cambia por tu ruta si está en otra carpeta
+img_transp <- image_transparent(img, "black", fuzz = 25)
+#Quiar fondo/ falló
+#img_transp <- image_transparent(
+ # img,
+  #color = "gray",   # gris del fondo aprox
+  #fuzz = 20            # tolerancia (clave)
+#)
+image_write(img_transp, "logo_sin_fondo1.png", format = "png")
 ```
 
