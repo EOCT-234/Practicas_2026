@@ -1,0 +1,31 @@
+
+         <!-- CARD 4 -->
+        <article class="event-card">
+          <div class="event-image-wrap">
+            <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/SEMINARIO/Investigadores.jpg" alt="Evento 4" class="event-image">
+
+            <span class="event-tag">SEMINARIO</span>
+
+            <div class="event-date-box">
+              <span class="month">MAR</span>
+              <span class="day">08</span>
+              <span class="year">2026</span>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <div class="event-meta">
+              <i class="far fa-calendar"></i> 08 mar 2026
+            </div>
+
+            <h3>
+              UNTRM participa en el Encuentro Regional de Jóvenes Agroecológicos de Amazonas
+            </h3>
+
+            <p>
+              Investigadores de la UNTRM participaron en el Encuentro Regional de Jóvenes Agroecológicos de Amazonas, donde compartieron avances del CEIGRAS sobre conservación y mejoramiento de granos y semillas nativas
+            </p>
+
+            <a href="evento-detalle.html" class="event-btn">Leer más <span>→</span></a>
+          </div>
+        </article>

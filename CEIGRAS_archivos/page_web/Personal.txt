@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal - CEIGRAS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-content">
+      <div class="topbar-left">
+        Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas
+      </div>
+
+      <div class="topbar-right">
+        <a href="https://web.facebook.com/untrm.a/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/untrmamazonas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/untrm" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/@untrm" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <img
+        src="https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/05/Logo_PGMG.png"
+        alt="Logo CEIGRAS"
+        class="logo"
+      >
+
+ <!-- BOTÓN MENÚ HAMBURGUESA -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="navbar" id="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Quienes Somos</a></li>
+          <li><a href="personal.html" class="active">Personal</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="germoplasma.html">Germoplasma</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO DE PÁGINA -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Personal del programa</h1>
+      <p>
+        El CEIGRAS reúne especialistas en investigación, innovación y desarrollo agrícola.
+        Haz clic en las fotos para conocer más sobre el personal.
+      </p>
+    </div>
+  </section>
+
+  <!-- INVESTIGADORES -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Investigadores</h2>
+
+      <div class="team-grid">
+
+        <div class="team-card"
+          onclick="openModal(
+            'Flavio Lozano Isla',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/fotos/Flavio_Lozano.jpg',
+            'Ingeniero agrónomo (CIP 213510), formado en la Universidad Nacional Agraria La Molina (UNALM, Perú), y magíster en Botánica con mención en Ecofisiología de Cultivos por la Universidade Federal Rural de Pernambuco (UFRPE, Brasil). Actualmente es candidato a doctor en Ciencias Agrarias en la Universidad de Hohenheim (UHOH, Alemania). Su trayectoria científica se ha centrado en el mejoramiento genético de plantas, ciencia y tecnología de semillas, bioinformática y el desarrollo de sistemas de inteligencia artificial para el análisis fenotípico y genómico de cultivos. Ha trabajado en iniciativas de mejoramiento participativo con comunidades campesinas del Altiplano peruano en el cultivo de quinua y en estudios de ecofisiología y tolerancia al estrés abiótico en papa, incluida su experiencia en el Centro Internacional de la Papa. Se desempeña como especialista en gestión de la investigación en el proyecto de fortalecimiento de servicios tecnológicos agrarios del INIA (CUI N.° 2472190). Posee experiencia docente en la UNALM y actualmente es profesor y coordinador del proyecto CEIGRAS (CUI N.° 2590588) en la Universidad Nacional Toribio Rodríguez de Mendoza. Es autor de los paquetes de R, inti, huito y GerminaR, orientados al diseño experimental, las buenas prácticas en la investigación y el análisis del proceso germinativo. Cuenta con clasificación RENACYT (P0052830) y publicaciones en revistas indexadas sobre fenotipado de alto rendimiento y estrés abiótico, con metodologías y herramientas computacionales aplicadas a la investigación científica.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/fotos/Flavio_Lozano.jpg" alt="Flavio Lozano Isla">
+          <p>Flavio Lozano Isla</p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Wagner Meza Maicelo',
+            'https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/06/Wagner-Meza-Maicelo-pgmg.jpg',
+            'Ingeniero agrónomo por la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas (UNTRM-A) e investigador registrado en CONCYTEC (P0376160). Cuenta con experiencia en el uso de organismos biológicos en cacao y caña de azúcar, y en el manejo agronómico de frijol común y quinua. Actualmente cursa una maestría en la UNTRM-A, donde investiga la interacción entre hongos micorrízicos arbusculares y plantas, y apoya en investigación en el proyecto CEIGRAS del INDES-CES.'
+          )">
+          <img src="https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/06/Wagner-Meza-Maicelo-pgmg.jpg" alt="Wagner Meza Maicelo">
+          <p>Wagner Meza Maicelo</p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Victor-Hugo Baldera-Chapoñan ',
+            'https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/06/Victor-H.-Baldera-Chaponan-pgmg.jpg',
+            'Egresado de la carrera de Ingeniería Agrónoma por la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas (UNTRM). Cuento con experiencia en investigación científica, análisis y procesamiento de datos, así como en liderazgo y representación estudiantil. Poseo competencias en análisis estadístico utilizando el software R, diseño de interfaces web y desarrollo de herramientas aplicadas a la investigación, destacando el sistema Huito para la generación de etiquetas personalizadas. Asimismo, tengo habilidades en recolección de datos en campo, comunicación científica, participación activa en espacios de gestión y representación universitaria, y experiencia en el manejo de cultivos de granos y leguminosas como quinua, frijol, arroz y maíz.'
+          )">
+          <img src="https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/06/Victor-H.-Baldera-Chaponan-pgmg.jpg" alt="Victor-Hugo Baldera-Chapoñan ">
+          <p>Victor-Hugo Baldera-Chapoñan </p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Amelia M. Menacho Mattos',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/fotos/investigadora.jpg',
+            'Bióloga por la Universidad Peruana Cayetano Heredia, con enfoque en genética y mejoramiento de especies forestales. Cuenta con experiencia en genómica aplicada, orientada al estudio y caracterización de especies maderables de importancia económica en el Perú, como Ceiba sp.. Con experiencia en técnicas de laboratorio molecular, incluyendo extracción de ADN, control de calidad y análisis de datos genómicos.Participa en proyectos de investigación vinculados al uso de herramientas bioinformáticas para el ensamblaje y análisis de genomas vegetales, así como en estudios de diversidad genética y estructura poblacional. Cuenta con manejo de software especializado en análisis genético y estadístico, así como experiencia en trabajo de campo para la recolección de muestras en diferentes regiones del país.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/fotos/investigadora.jpg" alt="Amelia M. Menacho Mattos ">
+          <p>Amelia M. Menacho Mattos </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESISTAS -->
+  <section class="team-section team-section-alt">
+    <div class="container">
+      <h2>Tesistas</h2>
+
+      <div class="team-grid">
+
+        <div class="team-card"
+          onclick="openModal(
+            'Edgar Orlando Campos Troyes',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/unnamed.jpg'
+,
+            'Estudiante de Ingeniería Agrónoma (IX ciclo) de la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas (UNTRM), actualmente practicante y tesista en el proyecto CEIGRAS, desarrollando el estudio “Evaluación morfo-agronómica de germoplasma de quinua en condiciones del distrito de Lamud, Amazonas”, con experiencia en manejo y análisis de datos mediante Microsoft Excel y R, destacando por mi capacidad analítica, trabajo en equipo y compromiso con la investigación orientada al aprovechamiento sostenible de los recursos agrícolas.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/unnamed.jpg" alt="Edgar Orlando Campos Troyes">
+          <p>Edgar Orlando Campos Troyes</p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Hermes Galoc Valqui',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/Hermes.jpg',
+            'Estudiante de Ingeniería Agrónoma del IX ciclo en la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas, con participación como tesista en CEIGRAS, desarrollando investigación sobre el comportamiento agronómico de accesiones de Chenopodium quinoa asociadas con Phaseolus vulgaris bajo diferentes distanciamientos de siembra en Lonya Chico, provincia de Luya, Amazonas. Poseo experiencia en organización y análisis de datos experimentales mediante Microsoft Excel y conocimientos básicos de R, además de responsabilidad, disposición para el trabajo en equipo y motivación por contribuir al desarrollo de una agricultura sostenible.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/Hermes.jpg" alt="Hermes Galoc Valqui">
+          <p>Hermes Galoc Valqui</p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Lalangui Peña Jefferson Ivan de Galoc Valqui',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/esposa%20de%20galoc.jpg',
+            'Estudiante de la Escuela Profesional de Ingeniería Agrónoma del IX ciclo en la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas, actualmente vinculado como tesista al proyecto CEIGRAS, donde desarrollo la investigación titulada “Respuesta de tres accesiones de frijol común (Phaseolus vulgaris) a la microdosificación de fertilizantes en el distrito de Lonya Chico, región Amazonas”. Cuento con habilidades en organización, procesamiento e interpretación de datos experimentales utilizando Microsoft Excel y conocimientos básicos de R, además de una actitud responsable, disposición para el trabajo en equipo y compromiso con el desarrollo de investigaciones orientadas a la sostenibilidad agrícola.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/esposa%20de%20galoc.jpg" alt="Lalangui Peña Jefferson Ivan de Galoc Valqui">
+          <p>Lalangui Peña Jefferson Ivan de Galoc Valqui</p>
+        </div>
+
+        <div class="team-card"
+          onclick="openModal(
+            'Yoel Diaz Saucedo',
+            'https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/Yoel%20Diaz%20Saucedo.png',
+            'Estudiante de Ingeniería Agrónoma (IX ciclo) de la Universidad Nacional Toribio Rodríguez de Mendoza de Amazonas (UNTRM), actualmente tesista en el proyecto de investigación titulado “Caracterización morfológica automatizada de Mashua (Tropaeolum tuberosum) mediante modelos de inteligencia artificial y análisis de imágenes”. Poseo conocimientos en análisis y procesamiento de datos aplicados a la investigación agronómica, así como en programación utilizando R y Python para el manejo de información experimental. Cuento con competencias en análisis de imágenes digitales, modelamiento básico mediante inteligencia artificial y gestión de bases de datos, orientadas a la caracterización fenotípica. Asimismo, tengo conocimientos en sistemas de información geográfica (SIG), especialmente en ArcGIS Pro, incluyendo la elaboración de mapas temáticos y el análisis de índices de vegetación como NDVI para el monitoreo de cultivos. Adicionalmente, desarrollo interfaces y herramientas web para la visualización y gestión de datos, integrando soluciones tecnológicas en entornos de investigación. Tengo experiencia en trabajo de campo, recolección y organización de datos, destacando mi capacidad para estructurar información y automatizar procesos. Me caracterizo por el aprendizaje autónomo, la capacidad analítica y el interés en aplicar herramientas tecnológicas en la investigación agrícola.'
+          )">
+          <img src="https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/Yoel%20Diaz%20Saucedo.png">
+          <p>Yoel Diaz Saucedo</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" onclick="closeModalOutside(event)">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+
+      <h2 id="modal-title"></h2>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-body">
+        <img id="modal-img" src="" alt="Perfil del personal">
+
+        <div class="modal-text-box">
+          <h3>Perfil</h3>
+          <p id="modal-text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-overlay"></div>
+
+    <div class="container footer-content">
+      <div class="footer-top">
+
+        <div class="footer-column">
+          <h4>Explora</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+            <li><a href="personal.html">Personal</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="publicaciones.html">Publicaciones</a></li>
+            <li><a href="germoplasma.html">Germoplasma</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Programa</h4>
+          <ul>
+            <li><a href="quienes-somos.html">Acerca de CEIGRAS</a></li>
+            <li><a href="personal.html">Equipo de trabajo</a></li>
+            <li><a href="eventos.html">Actividades y eventos</a></li>
+            <li><a href="publicaciones.html">Producción científica</a></li>
+            <li><a href="germoplasma.html">Banco de germoplasma</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Social</h4>
+          <ul>
+            <li>
+              <a href="https://web.facebook.com/untrm.a/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/untrmamazonas/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/untrm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-x-twitter"></i> X
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@untrm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contacto</h4>
+          <ul>
+            <li>
+              <a href="https://www.untrm.edu.pe/" target="_blank" rel="noopener noreferrer">
+                Portal UNTRM <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/place/Universidad+Nacional+Toribio+Rodr%C3%ADguez+de+Mendoza+de+Amazonas/@-6.2335356,-77.85574,17z/data=!3m1!4b1!4m6!3m5!1s0x91b6ab71f5b27271:0xfe42b2de3efad5e6!8m2!3d-6.2335409!4d-77.8531651!16s%2Fg%2F125_c890p?coh=245189&entry=tts&g_ep=EgoyMDI1MDUxMS4wIPu8ASoJLDEwMjExNDU1SAFQAw%3D%3D&skid=b320fc22-ab5b-4687-818e-54b7d80af6f4" target="_blank" rel="noopener noreferrer">
+                Servicios UNTRM <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:informes@untrm.edu.pe">
+                Correo UNTRM <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="tel:(041)477694">
+                Telef. UNTRM <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-logo">
+          <img src="https://plantbreeding.untrm.edu.pe/wp-content/uploads/2025/05/logo_PGMG_blanco.png" alt="Logo UNTRM">
+        </div>
+
+        <div class="footer-copy">
+          © 2026 UNTRM. Todos los derechos reservados
+        </div>
+      </div>
+    </div>
+  </footer>
+ <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    toggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  </script>
+
+<script>
+  function openModal(nombre, imagen, descripcion) {
+    document.getElementById("modal-title").innerText = nombre;
+    document.getElementById("modal-img").src = imagen;
+    document.getElementById("modal-text").innerText = descripcion;
+
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  function closeModalOutside(e) {
+    if (e.target.id === "modal") {
+      closeModal();
+    }
+  }
+</script>
+</body>
+</html>
