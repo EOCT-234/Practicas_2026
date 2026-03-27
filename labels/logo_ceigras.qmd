@@ -81,8 +81,8 @@ pdf_convert(
 
 ```{r}
 img <- image_read("ETIQUETA_UNTRM_white_1.png")
-img_sin_fondo <- image_transparent(img, color = "#00FF00", fuzz = 45)
-image_write(img_sin_fondo, "imagen_sin_fondo.png")
+img_sin_fondo <- image_transparent(img, color = "#00FF00", fuzz = 49)
+image_write(img_sin_fondo, "imagen_sin_fondo1.png")
 
 ```
 
