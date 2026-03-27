@@ -3,6 +3,8 @@ title: "LOGO_CEIGRAS"
 author: "CEIGRAS"
 format: html
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Setup
@@ -30,36 +32,25 @@ source("https://inkaverse.com/setup.r")
  #colo azul: https://github.com/EOCT-234/Practicas_2026/blob/main/CEIGRAS_archivos/Logo_UNTRMpng.png
     #color blanco: https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/CEIGRAS_archivos/Logo_UNTRMpng_white.png
 
-label <- label_layout(size = c(3.9, 0.6)
-               , border_color = "white"
+label <- label_layout(size = c(4, 0.6)
+               , border_color = "#00FF00"
                , border_width = 0.1
-               , background = "gray"
+               , background = "#00FF00"
                ) %>%
   # Logo UNTRM
   include_image(
-    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/labels/Logo_UNTRMpng_white.png"
-    , size = c(0.5, 0.5)
-    , position = c(0.5, 0.3)
-    ) %>%
-    include_image(
-    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/labels/barrita-blanca.png"
+    value = "https://raw.githubusercontent.com/EOCT-234/Practicas_2026/refs/heads/main/labels/logo%20y%20letras.png"
     , size = c(2,2)
-    , position = c(1.05, 0.3)
-    ) %>%
-   include_text(value = "UNTRM"
-               , position = c(2 , 0.3)
-               , size = 15
-               , color = "white"   #color de letras d euniversidad = #133E6B
-               , fontface = "bold"
-               ) %>% 
+    , position = c(1.1, 0.3)
+    ) %>% 
   include_text(value = "CENTRO DE INVESTIGACIÓN"
-               , position = c(3 , 0.4)
+               , position = c(3.05 , 0.4)
                , size = 3.5
                , color = "white"   #color de letras d euniversidad = #133E6B
                , fontface = "bold"
                ) %>% 
   include_text(value = "EN GRANOS Y SEMILLAS"
-               , position = c(2.9 , 0.2)
+               , position = c(2.95 , 0.2)
                , size = 3.5
                , color = "white"
                , fontface = "bold"
@@ -73,7 +64,7 @@ label %>% label_print()
 label %>%
   label_print(
     mode = "c",
-    paper = c(4, 0.7),
+    paper = c(4.1, 0.7),
     filename = "ETIQUETA_UNTRM_white"
   )
 ```
@@ -89,21 +80,16 @@ pdf_convert(
 ```
 
 ```{r}
-library(magick)
+img <- image_read("ETIQUETA_UNTRM_white_1.png")
+img_sin_fondo <- image_transparent(img, color = "#00FF00", fuzz = 45)
+image_write(img_sin_fondo, "imagen_sin_fondo.png")
 
-img <- image_read("logo_sin_fondo.png")
-
-# convertir blanco en transparente
-img_transp <- image_transparent(img, color = "none")
-# image_blank( width = 400, height = 1200, color = "none")
-
-image_write(img, "CEIGRAS_UNTRM_white_SF.png", density = 400)
 ```
 
 ```{r}
 #Quitar fondo gris
-img <- image_read("logo_sin_fondo.png")   # cambia por tu ruta si está en otra carpeta
-img_transp <- image_transparent(img, "black", fuzz = 25)
+img <- image_read("ETIQUETA_UNTRM_white_1.png")   # cambia por tu ruta si está en otra carpeta
+img_transp <- image_transparent(img, "none", fuzz = 40)
 #Quiar fondo/ falló
 #img_transp <- image_transparent(
  # img,
